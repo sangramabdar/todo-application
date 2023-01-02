@@ -122,7 +122,7 @@ function AddButton({ handleAddTask }: any) {
       >
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Create your account</ModalHeader>
+          <ModalHeader>Add Task</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
             <form onSubmit={handleSubmit}>

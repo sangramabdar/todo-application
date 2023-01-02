@@ -1,22 +1,8 @@
-import {
-  TableContainer,
-  Table,
-  TableCaption,
-  Thead,
-  Tr,
-  Tbody,
-  Td,
-  Spinner,
-  Flex,
-  Heading,
-  Box,
-  Tfoot,
-  Th,
-} from "@chakra-ui/react";
+import { Spinner, Flex, Heading, Grid } from "@chakra-ui/react";
 
 import { Task } from "../api/task";
-import TaskRow from "./Task";
-import { Stack, Center } from "@chakra-ui/react";
+import { Stack } from "@chakra-ui/react";
+import TaskComponent from "./Task";
 
 interface TaskListProps {
   tasks: Task[] | null;
@@ -56,55 +42,30 @@ function TaskList({
       </Flex>
     );
 
+  console.log(tasks);
+
   return (
-    <TableContainer
-      m="10"
-      bg="blue.300"
-      borderRadius="2xl"
-      color="white"
-      maxWidth={{
-        lg: "800px",
-        sm: "600px",
+    <Grid
+      m="auto"
+      maxW="60%"
+      templateColumns={{
+        md: "repeat(3, 1fr)",
+        sm: "repeat(2, 1fr)",
       }}
-      margin="auto"
-      my="2"
-      rounded="md"
+      gap={5}
+      justifyContent="center"
     >
-      <Table variant="simple" size="md">
-        <TableCaption color="white">Task Table</TableCaption>
-        <Thead>
-          <Tr>
-            <Td>Title</Td>
-            <Td>Description</Td>
-            <Td>Actions</Td>
-          </Tr>
-        </Thead>
-        <Tbody>
-          {tasks?.slice(0, tasks.length).map((Task: any) => {
-            return (
-              <TaskRow
-                handleDeleteTask={handleDeleteTask}
-                handleUpdateTask={handleUpdateTask}
-                key={Task._id}
-                {...Task}
-              />
-            );
-          })}
-        </Tbody>
-        {/* <Tfoot>
-          {tasks?.slice(tasks.length - 1).map(Task => {
-            return (
-              <TaskRow
-                handleDeleteTask={handleDeleteTask}
-                handleUpdateTask={handleUpdateTask}
-                key={Task._id}
-                {...Task}
-              />
-            );
-          })}
-        </Tfoot> */}
-      </Table>
-    </TableContainer>
+      {tasks?.slice(0, tasks.length).map((task: any) => {
+        return (
+          <TaskComponent
+            key={task._id}
+            {...task}
+            handleDeleteTask={handleDeleteTask}
+            handleUpdateTask={handleUpdateTask}
+          />
+        );
+      })}
+    </Grid>
   );
 }
 

@@ -77,8 +77,6 @@ function DashBoard() {
 
     // setTasks(updatedTasks);
 
-    console.log(updatedTask);
-
     getTasksService();
   };
 
@@ -88,7 +86,7 @@ function DashBoard() {
   };
 
   return (
-    <Box>
+    <Box minHeight="100vh" bgColor="blue.300">
       <Button
         variant="solid"
         onClick={handleLogOut}

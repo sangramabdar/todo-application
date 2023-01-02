@@ -50,14 +50,7 @@ function DeleteButton(props: any) {
   };
 
   return (
-    <Button
-      _hover={{
-        backgroundColor: "blue.500",
-      }}
-      bgColor="blue.400"
-      mr="5"
-      onClick={handleOnDelete}
-    >
+    <Button mr="5" onClick={handleOnDelete}>
       Delete
     </Button>
   );

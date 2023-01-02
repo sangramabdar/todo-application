@@ -14,6 +14,7 @@ interface InputFieldProps {
   touched?: boolean;
   label: string;
   type?: string;
+  heigth?: string;
 }
 
 function InputField({
@@ -25,6 +26,7 @@ function InputField({
   touched,
   label,
   type,
+  heigth,
 }: InputFieldProps) {
   const isInValid = (error && touched) as boolean;
 
@@ -41,6 +43,7 @@ function InputField({
         onChange={onChange}
         backgroundColor="white"
         color="black"
+        height={heigth}
       />
       {isInValid ? <FormErrorMessage>{error}</FormErrorMessage> : null}
     </FormControl>

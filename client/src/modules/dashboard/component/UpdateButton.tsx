@@ -111,8 +111,6 @@ function UpdateButton(props: any) {
     resetForm();
     onClose();
 
-    console.log(props);
-
     let { handleDeleteTask, handleUpdateTask, ...otherProps } = props;
 
     handleUpdateTask({ ...otherProps, ...taskInfo });
@@ -125,19 +123,11 @@ function UpdateButton(props: any) {
 
   return (
     <>
-      <Button
-        _hover={{
-          backgroundColor: "blue.500",
-        }}
-        bgColor="blue.400"
-        onClick={onOpen}
-      >
-        Update
-      </Button>
+      <Button onClick={onOpen}>Update</Button>
       <Modal isOpen={isOpen} onClose={handleOnClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Create your account</ModalHeader>
+          <ModalHeader>Update Task</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
             <form onSubmit={handleSubmit}>
@@ -168,7 +158,7 @@ function UpdateButton(props: any) {
                   type="submit"
                   isDisabled={isDisabled}
                 >
-                  submit
+                  Submit
                 </Button>
               </Flex>
             </form>
