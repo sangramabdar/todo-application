@@ -17,7 +17,7 @@ function TaskComponent(props: any) {
   const { title, description } = props;
 
   return (
-    <GridItem>
+    <GridItem rounded="2xl" bgColor="white">
       <Card variant="outline">
         <CardHeader>
           <Heading size="md">{title}</Heading>

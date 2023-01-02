@@ -123,14 +123,14 @@ function SignUp() {
     });
 
   return (
-    <Center bg="blue.400" h="100vh" color="white">
+    <Center bg="gray.200" h="100vh" color="black">
       <Stack
         justifyContent="center"
         alignItems="center"
         boxShadow="lg"
         rounded="md"
         padding="5"
-        bg="blue.300"
+        bg="white"
       >
         <Text fontSize="20px">Sign Up</Text>
         <form onSubmit={handleSubmit}>

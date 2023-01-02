@@ -5,14 +5,15 @@ import { Link } from "react-router-dom";
 function LinkButton({ children }: any) {
   return (
     <Button
+      color="white"
       mt="20px"
       variant="solid"
-      backgroundColor="blue.300"
+      backgroundColor="cyan.800"
       width="100px"
       textAlign="center"
       size="lg"
       _hover={{
-        backgroundColor: "blue.400",
+        backgroundColor: "cyan.700",
       }}
     >
       {children}
@@ -28,22 +29,15 @@ function Home() {
         flexDirection="column"
         justifyContent="center"
         alignItems="center"
-        bg="blue.500"
-        color="white"
+        bg="gray.200"
+        color="black"
         position="fixed"
         top="0"
         bottom="0"
         left="0"
         right="0"
       >
-        <Text
-          color="white"
-          fontSize="3xl"
-          as="b"
-          mx="auto"
-          maxW="50%"
-          textAlign="center"
-        >
+        <Text fontSize="3xl" as="b" mx="auto" maxW="50%" textAlign="center">
           Todo Application
         </Text>
         <Stack spacing="2">

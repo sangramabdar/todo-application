@@ -86,13 +86,18 @@ function DashBoard() {
   };
 
   return (
-    <Box minHeight="100vh" bgColor="blue.300">
+    <Box minHeight="100vh" bgColor="gray.200">
       <Button
         variant="solid"
         onClick={handleLogOut}
         position="fixed"
         top="20px"
         right="20px"
+        color="white"
+        backgroundColor="cyan.800"
+        _hover={{
+          backgroundColor: "cyan.700",
+        }}
       >
         LogOut
       </Button>

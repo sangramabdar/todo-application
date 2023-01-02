@@ -110,7 +110,16 @@ function AddButton({ handleAddTask }: any) {
 
   return (
     <Box p="5">
-      <Button onClick={onOpen}>Add Task</Button>
+      <Button
+        _hover={{
+          backgroundColor: "cyan.700",
+        }}
+        backgroundColor="cyan.800"
+        color="white"
+        onClick={onOpen}
+      >
+        Add Task
+      </Button>
       <Modal
         initialFocusRef={initialRef}
         finalFocusRef={finalRef}

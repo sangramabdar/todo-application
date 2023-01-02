@@ -126,14 +126,14 @@ function Login() {
     });
 
   return (
-    <Center bg="blue.500" h="100vh" color="white">
+    <Center bgColor="gray.200" h="100vh" color="black" shadow="md">
       <Stack
         justifyContent="center"
         alignItems="center"
         boxShadow="lg"
         rounded="md"
         padding="5"
-        bg="blue.300"
+        bgColor="white"
       >
         <Text fontSize="20px">Login</Text>
         <form onSubmit={handleSubmit}>
