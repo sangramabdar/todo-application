@@ -74,9 +74,8 @@ function TaskList({
         <TableCaption color="white">Task Table</TableCaption>
         <Thead>
           <Tr>
-            <Td>Name</Td>
-            <Td>Age</Td>
-            <Td>Salary</Td>
+            <Td>Title</Td>
+            <Td>Description</Td>
             <Td>Actions</Td>
           </Tr>
         </Thead>
