@@ -19,7 +19,7 @@ import { taskSchema } from "../constants";
 import { useNavigate } from "react-router-dom";
 
 function UpdateButton(props: any) {
-  const { description, title, _id } = props;
+  const { description, title, _id, handleUpdateTask } = props;
 
   const navigate = useNavigate();
   const toast = useToast();
@@ -33,7 +33,6 @@ function UpdateButton(props: any) {
   };
 
   const onSubmit = (values: any) => {
-    console.log(values);
     setTaskInfo({ ...values });
     setIsDisabled(true);
     showLoadingToast();
@@ -111,9 +110,7 @@ function UpdateButton(props: any) {
     resetForm();
     onClose();
 
-    let { handleDeleteTask, handleUpdateTask, ...otherProps } = props;
-
-    handleUpdateTask({ ...otherProps, ...taskInfo });
+    handleUpdateTask();
   };
 
   const handleOnClose = () => {

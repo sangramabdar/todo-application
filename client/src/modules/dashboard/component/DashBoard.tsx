@@ -59,24 +59,15 @@ function DashBoard() {
   };
 
   const handleDeleteTask = (_id: string) => {
-    const updatedTasks = tasks.filter(task => task._id !== _id);
+    const newTasks = tasks.filter(task => task._id !== _id);
 
-    if (updatedTasks.length === 0) {
+    if (newTasks.length === 0) {
       setError("Nothing");
     }
-    setTasks(updatedTasks);
+    setTasks(newTasks);
   };
 
-  const handleUpdateTask = (updatedTask: any) => {
-    // const updatedTasks = tasks.map(task => {
-    //   if (task._id === updatedTask._id) {
-    //     task = { ...updatedTask };
-    //   }
-    //   return employee;
-    // });
-
-    // setTasks(updatedTasks);
-
+  const handleUpdateTask = () => {
     getTasksService();
   };
 
@@ -84,6 +75,8 @@ function DashBoard() {
     localStorage.removeItem("token");
     navigate("/", { replace: true });
   };
+
+  console.log(tasks);
 
   return (
     <Box minHeight="100vh" bgColor="gray.200">
@@ -99,7 +92,7 @@ function DashBoard() {
           backgroundColor: "cyan.700",
         }}
       >
-        LogOut
+        Log Out
       </Button>
 
       <AddButton handleAddTask={handleAddTask} />

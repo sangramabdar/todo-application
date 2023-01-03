@@ -24,7 +24,7 @@ function AddButton({ handleAddTask }: any) {
   const [isDisabled, setIsDisabled] = useState(false);
 
   const onSubmit = (values: any) => {
-    setTaskInfo({ ...values });
+    setTaskInfo({ ...values, status: "INCOMPLETE" });
     setIsDisabled(true);
     showLoadingToast();
   };

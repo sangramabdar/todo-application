@@ -42,8 +42,6 @@ function TaskList({
       </Flex>
     );
 
-  console.log(tasks);
-
   return (
     <Grid
       m="auto"
